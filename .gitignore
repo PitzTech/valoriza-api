@@ -1,1 +1,33 @@
-node_modules
+.env
+/temp
+/dist
+/node_modules
+.tscache/
+.package-lock.json
+yarn-error.log
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+# misc
+npm-debug.log
+Dockerfile
+
+# System Files
+.DS_Store
+Thumbs.db

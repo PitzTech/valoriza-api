@@ -6,7 +6,7 @@ import {
 	UpdateDateColumn,
 } from "typeorm"
 
-import { v4 as uudi } from "uuid"
+import { v4 as uuid } from "uuid"
 
 @Entity()
 class User {
@@ -27,6 +27,12 @@ class User {
 
 	@UpdateDateColumn()
 	updatedAt: Date
+
+	constructor() {
+		if (!this.id) {
+			this.id = uuid()
+		}
+	}
 }
 
 export { User }
