@@ -5,6 +5,7 @@
 .tscache/
 .package-lock.json
 yarn-error.log
+/db/*.sqlite
 
 # IDEs and editors
 /.idea
@@ -31,4 +32,4 @@ Dockerfile
 # System Files
 .DS_Store
 Thumbs.db
-/db/*.sqlite
+
