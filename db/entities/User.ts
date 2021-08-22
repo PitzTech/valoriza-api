@@ -8,7 +8,7 @@ import {
 
 import { v4 as uuid } from "uuid"
 
-@Entity()
+@Entity("users")
 class User {
 	@PrimaryColumn()
 	readonly id: string
@@ -26,7 +26,7 @@ class User {
 	created_at: Date
 
 	@UpdateDateColumn()
-	updatedAt: Date
+	updated_at: Date
 
 	constructor() {
 		if (!this.id) {
