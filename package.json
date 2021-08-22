@@ -8,7 +8,7 @@
 		"postinstall": "yarn build",
 		"typeorm": "yarn ts-node-dev ./node_modules/typeorm/cli.js",
 		"dev:server": "yarn ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/server.ts",
-		"db:migrationsCreate": "yarn typeorm migration:create -n",
+		"db:migrationCreate": "yarn typeorm migration:create -n",
 		"db:migrationsRun": "yarn typeorm migration:run",
 		"db:revertLast": "yarn typeorm migration:revert",
 		"db:entitiesCreate": "yarn typeorm entity:create -n"
