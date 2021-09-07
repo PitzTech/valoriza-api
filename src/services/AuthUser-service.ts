@@ -15,8 +15,6 @@ class AuthUserService {
 	async execute({ email, password }: IAuthRequest) {
 		const usersRepositories = getCustomRepository(UserRepositories)
 
-		// Validation
-
 		const user = await usersRepositories.findOne({ email })
 		if (!user) throw new Error("Email or Password Incorrect")
 
