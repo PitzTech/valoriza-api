@@ -10,19 +10,22 @@ import { ListTagsController } from "./controllers/ListTags-controller"
 
 import { guardAdmin } from "./middlewares"
 import { ensureAuth } from "./middlewares/ensureAuth"
+import { ListUsersController } from "./controllers/ListUsers-controller"
 
 const router = Router()
 
-const createUserController = new CreateUserController()
-const createTagController = new CreateTagController()
 const createComplimentController = new CreateComplimentController()
 const authUserController = new AuthUserController()
 
+const createUserController = new CreateUserController()
 const listUserReceivedComplimentsController =
 	new ListUserReceivedComplimentsController()
 const listUserSendComplimentsController =
 	new ListUserSendComplimentsController()
+const listUsersController = new ListUsersController()
+
 const listTagsService = new ListTagsController()
+const createTagController = new CreateTagController()
 
 router.post("/compliments", ensureAuth, createComplimentController.handle)
 router.post("/login", authUserController.handle)
@@ -38,6 +41,7 @@ router.get(
 	ensureAuth,
 	listUserReceivedComplimentsController.handle,
 )
+router.get("/users/", ensureAuth, listUsersController.handle)
 
 router.post("/tags", ensureAuth, guardAdmin, createTagController.handle)
 router.get("/tags", ensureAuth, listTagsService.handle)
